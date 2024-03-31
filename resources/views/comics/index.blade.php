@@ -9,13 +9,13 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Price</th>
-                        <th>Series</th>
-                        <th>Sale Date</th>
-                        <th>Type</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Series</th>
+                        <th scope="col">Sale Date</th>
+                        <th scope="col">Type</th>
                     </tr>
                 </thead>
 
@@ -30,13 +30,16 @@
                             <td>{{ $comic->sale_date }}</td>
                             <td>{{ $comic->type }}</td>
                         </tr>
-
-                    @empty
-                        <tr>
-                            <td colspan="100%">
-                                No comics found
-                            </td>
-                        </tr>
+                        <td>
+                            <a href="{{ route('comics.show', $comic) }}" class="me-2">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                        @empty
+                            <tr>
+                                <td colspan="100%">
+                                    No comics found
+                                </td>
+                            </tr>
                     @endforelse
                 </tbody>
             </table>

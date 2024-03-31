@@ -3,6 +3,8 @@
 @section('main-content')
     <section class="container mt-5">
         <h1 class="text-light text-center">Create Comic</h1>
+        <a class="btn btn-primary mt-3 mb-4" href="{{ route('comics.index') }}">Back to Comics List</a>
+
         <form action="{{ route('comics.store') }}" method="POST">
             @csrf
             <div class="row g-3">
